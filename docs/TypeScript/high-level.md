@@ -46,113 +46,6 @@ let p2 = { x: 1, y: 2, z: 3 }
 p = p2 // 允许，因为 p2 包含 Point 所需的所有属性
 ```
 
-## 协变和逆变
-
-协变和逆变是描述类型转换后的兼容性的概念。
-
-### 协变（Covariance）
-
-如果 A 是 B 的子类型，那么 T<A> 也是 T<B> 的子类型。
-
-```typescript
-interface Animal {
-  name: string
-}
-
-interface Dog extends Animal {
-  breed: string
-}
-
-let animals: Animal[] = []
-let dogs: Dog[] = []
-
-animals = dogs // 允许，因为 Dog[] 是 Animal[] 的子类型
-```
-
-### 逆变（Contravariance）
-
-如果 A 是 B 的子类型，那么 T<B> 是 T<A> 的子类型。这在函数参数中常见。
-
-```typescript
-type Logger<T> = (param: T) => void
-
-let logAnimal: Logger<Animal> = animal => console.log(animal.name)
-let logDog: Logger<Dog> = dog => console.log(dog.breed)
-
-logDog = logAnimal // 允许，因为 Logger<Animal> 是 Logger<Dog> 的子类型
-```
-
-## 符号（Symbols）和迭代器（Iterators）
-
-### 符号（Symbols）
-
-Symbol 是一种基本数据类型，表示唯一的标识符。
-
-```typescript
-const sym1 = Symbol('key')
-const sym2 = Symbol('key')
-
-console.log(sym1 === sym2) // false
-```
-
-Symbols 可用作对象属性的键。
-
-```typescript
-const sym = Symbol()
-
-let obj = {
-  [sym]: 'value'
-}
-
-console.log(obj[sym]) // "value"
-```
-
-### 迭代器（Iterators）
-
-迭代器允许我们定义对象的自定义迭代行为。
-
-```typescript
-class NumberRange implements Iterable<number> {
-  constructor(private start: number, private end: number) {}
-
-  [Symbol.iterator](): Iterator<number> {
-    // 实现Symbol.iterator方法，返回一个迭代器对象
-    let current = this.start; // 初始化当前值为起始值
-    const end = this.end; // 结束值为设定的结束值
-    return {
-      next(): IteratorResult<number> {
-        // 实现next方法，返回迭代结果对象
-        if (current <= end) {
-          // 如果当前值小于等于结束值
-          return { value: current++, done: false }; // 返回当前值并将当前值加一，迭代未结束
-        } else {
-          return { value: null, done: true }; // 返回空值，迭代结束
-        }
-      }
-    }
-  }
-}
-
-for (const num of new NumberRange(1, 5)) {
-  console.log(num) // 输出 1, 2, 3, 4, 5
-}
-```
-### 类型兼容性
-
-TypeScript 使用结构类型系统。如果两个对象具有相同的形状，它们就被认为是相同的类型。
-
-```typescript
-interface Point {
-  x: number
-  y: number
-}
-
-let p: Point = { x: 10, y: 20 }
-let p2 = { x: 1, y: 2, z: 3 }
-
-p = p2 // 允许，因为 p2 包含 Point 所需的所有属性
-```
-
 实际业务场景：在开发一个地图应用时，您可能需要处理不同来源的坐标数据。有些数据源可能提供额外的信息（如高度），但您的应用只需要 x 和 y 坐标。类型兼容性允许您使用这些"超集"对象，而不需要显式地去除多余的属性。
 
 ## 协变和逆变
@@ -161,7 +54,7 @@ p = p2 // 允许，因为 p2 包含 Point 所需的所有属性
 
 ### 协变（Covariance）
 
-如果 A 是 B 的子类型，那么 T<A> 也是 T<B> 的子类型。
+如果 A 是 B 的子类型，那么 `T<A>` 也是 `T<B>` 的子类型。
 
 ```typescript
 interface Animal {
@@ -182,7 +75,7 @@ animals = dogs // 允许，因为 Dog[] 是 Animal[] 的子类型
 
 ### 逆变（Contravariance）
 
-如果 A 是 B 的子类型，那么 T<B> 是 T<A> 的子类型。这在函数参数中常见。
+如果 A 是 B 的子类型，那么 `T<B>` 是 `T<A>` 的子类型。这在函数参数中常见。
 
 ```typescript
 type Logger<T> = (param: T) => void

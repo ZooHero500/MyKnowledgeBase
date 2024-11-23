@@ -12,17 +12,17 @@ React Hooks 是 React 16.8 引入的特性，它让你在不编写 class 的情�
    - 处理副作用
    - 替代生命周期方法
 
-3. [useContext](/React/Hook/UseContext.md)
+3. [useContext](/React/Hook/useContext.md)
    - 订阅 React Context
    - 跨组件共享状态
 
 ## 性能优化 Hooks
 
-1. [useMemo](/React/Hook/UseMemo.md)
+1. [useMemo](/React/Hook/useMemo.md)
    - 缓存计算结果
    - 优化性能
 
-2. [useCallback](/React/Hook/UseCallback.md)
+2. [useCallback](/React/Hook/useCallback.md)
    - 缓存函数
    - 防止不必要的重渲染
 
