@@ -4,61 +4,35 @@ outline: deep
 
 # 知识体系目录
 
-## Vue
-Vue 是一款用于构建用户界面的 JavaScript 框架。它基于标准 HTML、CSS 和 JavaScript 构建，并提供了一套声明式的、组件化的编程模型。
+## JavaScript
+JavaScript 是一种高级的、动态的、弱类型的解释型编程语言。
 
-### [基础知识](/Vue/Basic/index)
-- 创建应用
-- 模板语法
-- 响应式基础
-- 计算属性
-- 类与样式绑定
-- 条件渲染
-- 列表渲染
-- 事件处理
-- 表单输入绑定
-- 生命周期
+### 核心概念
+- [闭包](/Javascript/Core/closure)
+- [事件循环](/Javascript/Core/event-loop)
+- [原型和继承](/Javascript/Core/prototype)
+- [函数式编程](/Javascript/Core/functional)
+- [面向对象](/Javascript/Core/object)
 
-### [深入组件](/Vue/Components/index)
-- 组件注册
-- Props
-- 事件
-- v-model
-- 插槽
-- 依赖注入
-- 异步组件
+### ES6+
+- [新特性总览](/Javascript/ES6/index)
+- [类与继承](/Javascript/ES6/class)
+- [模块系统](/Javascript/ES6/module)
+- [Promise](/Javascript/ES6/promise)
+- [async/await](/Javascript/ES6/async-await)
+- [装饰器](/Javascript/ES6/decorator)
+- [可选链和空值合并](/Javascript/ES6/optional-chaining)
 
-### [可复用性](/Vue/Reusability/index)
-- 组合式函数
-- 自定义指令
-- 插件
-
-### [内置组件](/Vue/BuiltIns/index)
-- Transition
-- TransitionGroup
-- KeepAlive
-- Teleport
-- Suspense
-
-### [最佳实践](/Vue/BestPractices/index)
-- 生产部署
-- 性能优化
-- 安全
-- 访问性
-- 测试
-- 工程化实践
-
-### [原理探究](/Vue/Principle/index)
-- 响应式系统
-- 虚拟 DOM
-- 编译优化
-- 组件系统
-- 渲染机制
+### 设计模式
+- [设计模式概述](/Javascript/Patterns/index)
+- [创建型模式](/Javascript/Patterns/creational)
+- [结构型模式](/Javascript/Patterns/structural)
+- [行为型模式](/Javascript/Patterns/behavioral)
 
 ## React
 React 是一个用于构建用户界面的 JavaScript 库，主要用于构建 UI 界面。
 
-### [基础概念](/React/index)
+### 基础概念
 - JSX
 - 组件 & Props
 - State & 生命周期
@@ -66,18 +40,19 @@ React 是一个用于构建用户界面的 JavaScript 库，主要用于构建 U
 - 条件渲染
 - 列表 & Keys
 
-### [Hook](/React/Hook/overview)
-- useState
-- useEffect
-- useContext
-- useReducer
-- useCallback
-- useMemo
-- useRef
-- useImperativeHandle
-- useLayoutEffect
+### Hook
+- [Hook 概述](/React/Hook/overview)
+- [useState](/React/Hook/useState)
+- [useEffect](/React/Hook/useEffect)
+- [useContext](/React/Hook/useContext)
+- [useReducer](/React/Hook/useReducer)
+- [useCallback](/React/Hook/useCallback)
+- [useMemo](/React/Hook/useMemo)
+- [useRef](/React/Hook/useRef)
+- [useImperativeHandle](/React/Hook/useImperativeHandle)
+- [useLayoutEffect](/React/Hook/useLayoutEffect)
 
-### [高级概念](/React/Advanced/index)
+### 高级概念
 - 生命周期
 - 纯函数
 - 虚拟DOM
@@ -85,43 +60,52 @@ React 是一个用于构建用户界面的 JavaScript 库，主要用于构建 U
 ## TypeScript
 TypeScript 是 JavaScript 的超集，它添加了可选的静态类型和基于类的面向对象编程。
 
-### [基础知识](/TypeScript/basis)
-- 类型系统
-- 变量声明
-- 接口
-- 类
-- 函数
-- 泛型
-- 枚举
+### 基础
+- [类型系统](/TypeScript/basis)
+- [变量声明](/TypeScript/basis)
+- [接口](/TypeScript/basis)
+- [类](/TypeScript/class)
+- [函数](/TypeScript/function)
+- [泛型](/TypeScript/generics)
 
-### [高级特性](/TypeScript/better)
-- 高级类型
-- 装饰器
-- 模块
-- 命名空间
-- 类型兼容性
-- 类型推断
+### 进阶用法
+- [高级类型](/TypeScript/advanced-types)
+- [装饰器](/TypeScript/decorators)
+- [模块](/TypeScript/module)
+- [命名空间](/TypeScript/namespace)
+- [类型兼容性](/TypeScript/type-compatibility)
+- [类型推断](/TypeScript/type-inference)
 
-### [工程实践](/TypeScript/high-level)
-- 配置文件
-- 编译选项
-- 声明文件
-- 工程引用
-- 调试技巧
+### 工程实践
+- [配置文件](/TypeScript/high-level)
+- [编译选项](/TypeScript/high-level)
+- [声明文件](/TypeScript/high-level)
+- [工程引用](/TypeScript/high-level)
+- [调试技巧](/TypeScript/high-level)
+
+## 前端工程化
+前端工程化是指将软件工程的原则和方法应用于前端开发的过程。
+
+### 工程化工具
+- [Gulp](/Engineering/gulp)
+- [Vite](/Engineering/vite)
+- [Webpack](/Engineering/webpack)
+- [Rollup](/Engineering/rollup)
+- [ESbuild](/Engineering/esbuild)
 
 ## 快速导航
 
 ### 入门指南
-- [Vue 基础知识](/Vue/Basic/index)
+- [JavaScript 核心概念](/Javascript/Core/index)
 - [React 基础概念](/React/index)
-- [TypeScript 基础知识](/TypeScript/basis)
+- [TypeScript 基础](/TypeScript/basis)
 
 ### 进阶主题
-- [Vue 深入组件](/Vue/Components/index)
+- [JavaScript 设计模式](/Javascript/Patterns/index)
 - [React Hook](/React/Hook/overview)
-- [TypeScript 高级特性](/TypeScript/better)
+- [TypeScript 进阶用法](/TypeScript/better)
 
 ### 最佳实践
-- [Vue 最佳实践](/Vue/BestPractices/index)
-- [React 纯函数](/React/Advanced/index)
+- [JavaScript 代码风格](/Javascript/BestPractices/index)
+- [React 最佳实践](/React/BestPractices/index)
 - [TypeScript 工程实践](/TypeScript/high-level)
