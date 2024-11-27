@@ -42,33 +42,79 @@
 
 - 函数式组件：使用函数定义组件，更简洁、更易于理解
 - 类组件：使用类定义组件，可以实现更复杂的功能，例如生命周期方法
+- React.FC：函数式组件的 TypeScript 类型，提供更好的类型检查
+  - FC 是 FunctionComponent 的缩写
+  - 自动包含了 children 属性类型
+  - 提供更好的 IDE 支持和类型提示
+  - 示例：
+    ```typescript
+    interface Props {
+      name: string;
+      age: number;
+    }
 
-### 3.2. 组件的渲染和更新
+    const MyComponent: React.FC<Props> = ({ name, age, children }) => {
+      return (
+        <div>
+          <p>Name: {name}</p>
+          <p>Age: {age}</p>
+          {children}
+        </div>
+      );
+    };
+    ```
+
+### 3.2. React.Fragment 和组件包装
+
+- React.Fragment：一个特殊的组件，用于在不添加额外 DOM 节点的情况下包装多个子元素
+  - 解决了组件必须返回单个根元素的限制
+  - 可以使用短语法 `<>...</>` 或完整语法 `<React.Fragment>...</React.Fragment>`
+  - Fragment 可以接收 key 属性（仅在完整语法中）
+  - 示例：
+    ```jsx
+    // 使用短语法
+    const ListItems = () => (
+      <>
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </>
+    );
+
+    // 使用完整语法（当需要key时）
+    const Items = items.map(item => (
+      <React.Fragment key={item.id}>
+        <dt>{item.term}</dt>
+        <dd>{item.description}</dd>
+      </React.Fragment>
+    ));
+    ```
+
+### 3.3. 组件的渲染和更新
 
 - 组件的渲染过程：React 如何将组件渲染到页面上
 - 组件的更新过程：React 如何更新组件的状态和视图
 - React 的虚拟 DOM 和 diff 算法
 
-### 3.3. Props 的传递和使用
+### 3.4. Props 的传递和使用
 
 - Props 的概念和作用：用于传递数据给组件，实现组件之间的通信
 - Props 的传递方式：在父组件中传递 Props 给子组件
 - Props 的使用：在子组件中访问和使用 Props
 
-### 3.4. State 的管理和更新
+### 3.5. State 的管理和更新
 
 - State 的概念和作用：用于管理组件内部的状态，实现动态更新
 - State 的初始化：在组件中定义 State
 - State 的更新：使用 setState 方法更新 State
 - State 的最佳实践：避免直接修改 State、使用 setState 方法更新 State 等
 
-### 3.5. 组件的生命周期方法
+### 3.6. 组件的生命周期方法
 
 - 生命周期方法的概念和作用：在组件的不同阶段执行特定的操作
 - 常用的生命周期方法：constructor、componentDidMount、componentDidUpdate、componentWillUnmount 等
 - 生命周期方法的应用场景：例如在组件挂载时获取数据、在组件更新时执行特定的操作等
 
-### 3.6. 组件的组合和复用
+### 3.7. 组件的组合和复用
 
 - 组件的组合：将多个组件组合在一起，构建更复杂的界面
 - 组件的复用：将相同的组件代码复用，提高开发效率

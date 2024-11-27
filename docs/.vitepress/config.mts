@@ -39,7 +39,7 @@ export default withMermaid({
         items: [
           {
             text: '核心概念',
-            collapsed: true,
+            collapsed: false,
             items: [
               { text: '闭包', link: '/Javascript/Core/closure' },
               
@@ -51,7 +51,7 @@ export default withMermaid({
           },
           {
             text: 'ES6+',
-            collapsed: true,
+            collapsed: false,
             items: [
               { text: '新特性总览', link: '/Javascript/ES6/index' },
               { text: '类与继承', link: '/Javascript/ES6/class' },
@@ -64,7 +64,7 @@ export default withMermaid({
           },
           {
             text: '设计模式',
-            collapsed: true,
+            collapsed: false,
             items: [
               { text: '设计模式概述', link: '/Javascript/Patterns/index' },
               { text: '创建型模式', link: '/Javascript/Patterns/creational' },
@@ -81,7 +81,7 @@ export default withMermaid({
           { text: '进阶概念', link: '/React/index' },
           { 
             text: 'Hook',
-            collapsed: true,
+            collapsed: false,
             items: [
               { text: 'Hook 概述', link: '/React/Hook/overview' },
               { text: 'useState', link: '/React/Hook/useState' },
